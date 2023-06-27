@@ -90,7 +90,7 @@ function Employs() {
               <>
                 <div className="image centering-content circle cl-khaled">
                   <img
-                    src={`https://www.talebRestaurantApi.onrender.com/assets/${person?.image}`}
+                    src={`https://www.taleb_restaurant_api.onrender.com/assets/${person?.image}`}
                     alt="EMPLOYEE"
                     width={100}
                     className="circle fit-cover"
