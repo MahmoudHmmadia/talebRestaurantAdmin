@@ -1,0 +1,25 @@
+@use "../../sass/colors/colors" as *;
+@use "../../sass/mixins/grid" as *;
+.fideBacks {
+  .fideBacks_filter {
+    grid-template-columns: 1fr 1fr;
+    .good {
+      background: $gradient-green !important;
+      color: #fff !important;
+    }
+    .bad {
+      background: $gradient-red !important;
+      color: #fff !important;
+    }
+    @media (max-width: 500px) {
+      li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+  .fideBacks_boxes {
+    @include grid(250px);
+  }
+}

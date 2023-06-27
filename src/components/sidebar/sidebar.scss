@@ -1,0 +1,40 @@
+@use "../../sass/colors/colors" as *;
+.sidebar {
+  min-height: 100vh;
+  @media (max-width: 767px) {
+    .sidebar__image {
+      display: none;
+    }
+  }
+  .links {
+    @media (max-width: 767px) {
+      gap: 1rem;
+    }
+    .link {
+      .active {
+        background-color: $khaled-main;
+        color: #000;
+        .content {
+          color: #000 !important;
+        }
+      }
+      .sidebar_link {
+        border-bottom: 1px solid #aaa;
+      }
+    }
+    @media (max-width: 767px) {
+      .link {
+        width: fit-content;
+        margin: 0 auto;
+        border: 1px solid;
+        border-radius: 0.5rem;
+        .sidebar_link {
+          border: none;
+        }
+        .content {
+          display: none;
+        }
+      }
+    }
+  }
+}

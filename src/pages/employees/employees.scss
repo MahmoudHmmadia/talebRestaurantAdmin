@@ -1,0 +1,24 @@
+@use "../../sass/mixins/grid" as *;
+.employees {
+  .social_container {
+    @include grid(150px);
+    gap: 0 !important;
+    @media (max-width: 670px) {
+      @include grid(100px);
+    }
+  }
+  .employees_boxes {
+    @include grid(250px);
+  }
+  .card {
+    transform: translateX(-50%);
+    @media (max-width: 991px) {
+      width: 70% !important;
+      top: 20% !important;
+    }
+    @media (max-width: 767px) {
+      width: 95% !important;
+      top: 10% !important;
+    }
+  }
+}

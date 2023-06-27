@@ -1,0 +1,11 @@
+@use "../../sass/mixins/grid" as *;
+.orders {
+  .orders_boxes {
+    @include grid(250px);
+  }
+  .order_dishes_details {
+    @media (max-width: 767px) {
+      min-width: 90%;
+    }
+  }
+}

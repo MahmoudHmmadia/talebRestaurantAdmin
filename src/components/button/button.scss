@@ -1,0 +1,26 @@
+@use "../../sass/colors/colors" as *;
+.button {
+  border: 2px solid $khaled-main;
+  &.outline {
+    border-color: $khaled-main;
+  }
+  @media (max-width: 500px) {
+    padding: 0.7rem 1.3rem !important;
+    font-size: 0.7rem;
+  }
+  .cool_text {
+    transform: translate(-50%, -50%);
+  }
+  .button_circle {
+    transform: translateX(-50%);
+  }
+  &:hover {
+    .button_circle {
+      top: -50% !important;
+    }
+    .cool_text {
+      top: 50% !important;
+      z-index: 1;
+    }
+  }
+}

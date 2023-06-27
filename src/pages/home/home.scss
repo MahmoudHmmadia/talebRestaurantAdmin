@@ -1,0 +1,16 @@
+@use "../../sass/mixins/grid" as *;
+@use "../../sass/mixins/neon_text" as *;
+
+.home {
+  .home_boxes {
+    @include grid(250px);
+    .box {
+      .title {
+        -webkit-text-stroke: 1px;
+      }
+    }
+  }
+  .alt_home_boxes {
+    @include grid(500px);
+  }
+}

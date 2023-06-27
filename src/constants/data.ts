@@ -1,0 +1,29 @@
+import { IconType } from "react-icons";
+import {
+  SiGmail,
+  BsFacebook,
+  BsLinkedin,
+  AiFillInstagram,
+} from "react-icons/all";
+export const socialIcons = [
+  {
+    name: "facebook",
+    Icon: BsFacebook,
+    color: "#4267B2",
+  },
+  {
+    name: "instagram",
+    Icon: AiFillInstagram,
+    color: "#cd486b",
+  },
+  {
+    name: "linkedin",
+    Icon: BsLinkedin,
+    color: "#0ff",
+  },
+  {
+    name: "gmail",
+    Icon: SiGmail,
+    color: "#DB4437",
+  },
+];
