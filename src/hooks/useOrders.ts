@@ -28,7 +28,7 @@ function useOrders() {
       .then((res) => {
         setOrders(res.data);
       })
-      .catch((_err) => {
+      .catch(() => {
         setServerResponse(ERROR_MESSAGE);
       });
   }

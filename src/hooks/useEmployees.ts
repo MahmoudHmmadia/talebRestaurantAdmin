@@ -18,7 +18,7 @@ function useEmployees() {
         });
         getEmployees();
       })
-      .catch((_err) => setServerResponse(ERROR_MESSAGE));
+      .catch(() => setServerResponse(ERROR_MESSAGE));
   }
   function getEmployees() {
     myAxios
@@ -26,7 +26,7 @@ function useEmployees() {
       .then((res) => {
         setEmployees(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch(() => setServerResponse(ERROR_MESSAGE));
   }
   useEffect(() => {
     getEmployees();

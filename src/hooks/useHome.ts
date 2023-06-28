@@ -50,8 +50,7 @@ function useHome() {
         setDetails(res.data);
         setLoading(false);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
         setLoading(false);
         setServerResponse(ERROR_MESSAGE);
       });

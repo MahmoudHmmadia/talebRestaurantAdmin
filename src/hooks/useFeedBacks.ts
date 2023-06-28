@@ -20,7 +20,7 @@ function useFeedBack() {
         setLoader(true);
         setFeedBacks(res.data);
       })
-      .catch((_err) => {
+      .catch(() => {
         setServerResponse(ERROR_MESSAGE);
       });
   }

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import myAxios from "../api/axios";
 import UseContext, { ERROR_MESSAGE } from "../context/UseContext";
+import { AxiosError } from "axios";
 
 function useLogin() {
   const { setAuth, setServerResponse } = UseContext();
@@ -22,11 +23,14 @@ function useLogin() {
       .then((_res) => {
         setAuth(true);
       })
-      .catch((err) => {
-        if (err.response.status == 401) {
+      .catch((err: AxiosError) => {
+        if (err.response?.status == 401) {
+          const message = {
+            message: "",
+          };
           setServerResponse({
             type: "error",
-            content: err.response.data.message,
+            content: (err.response?.data as typeof message).message,
           });
         } else {
           setServerResponse(ERROR_MESSAGE);
