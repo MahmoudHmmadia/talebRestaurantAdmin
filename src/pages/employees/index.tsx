@@ -11,6 +11,7 @@ import ServerResponse from "../../components/serverResponse";
 import { CiWarning } from "react-icons/ci";
 import AltButton from "../../components/altButton";
 import AddEmployee from "./components/AddEmployee";
+import CoolImage from "../../components/coolImage/CoolImage";
 function Employs() {
   const {
     fired,
@@ -89,7 +90,7 @@ function Employs() {
             ) : (
               <>
                 <div className="image centering-content circle cl-khaled">
-                  <img
+                  {/* <img
                     src={`https://www.taleb_restaurant_api.onrender.com/assets/${person?.image}`}
                     alt="EMPLOYEE"
                     width={100}
@@ -98,6 +99,13 @@ function Employs() {
                       boxShadow: "0 0 0 4px #000,0 0 0 8px",
                       aspectRatio: 1 / 1,
                     }}
+                  /> */}
+                  <CoolImage
+                    height={""}
+                    thumb=""
+                    url={`https://taleb-restaurant-api.onrender.com/assets/${person?.image}`}
+                    width={100}
+                    type="team"
                   />
                 </div>
                 <div className="flex flex-column g-1">

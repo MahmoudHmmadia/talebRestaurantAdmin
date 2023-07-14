@@ -1,8 +1,9 @@
 import PageTitle from "../../components/pageTitle";
+import { MdFoodBank } from "react-icons/md";
+import { TfiComments } from "react-icons/tfi";
+import { GiChefToque, GiKnifeFork } from "react-icons/gi";
+import { BiCoinStack, BiLoaderAlt, BiMoney } from "react-icons/bi";
 import {
-  BiCoinStack,
-  BiLoaderAlt,
-  BiMoney,
   BsCheck,
   BsEmojiAngryFill,
   BsEmojiHeartEyesFill,
@@ -10,11 +11,7 @@ import {
   BsEmojiSmileFill,
   BsMenuAppFill,
   BsPeopleFill,
-  GiChefToque,
-  GiKnifeFork,
-  MdFoodBank,
-  TfiComments,
-} from "react-icons/all";
+} from "react-icons/bs";
 import { motion as m } from "framer-motion";
 import "./home.scss";
 import HomeBox from "./components/homeBox";
@@ -126,7 +123,7 @@ function Home() {
         </div>
         <div className="latest_fideBacks flex flex-column flex-1 main-bg radius-s dark-box-shadow pb-3">
           <div className="cl-w flex align-center g-1 p-2">
-            <h2 className="uppercase">latest fide backs</h2>
+            <h2 className="uppercase">latest feed backs</h2>
             <div className="cl-khaled fs-med">
               <TfiComments />
             </div>

@@ -2,7 +2,7 @@ import Button from "../../components/button";
 import useLogin from "../../hooks/useLogin";
 import "./login.scss";
 import { motion as m } from "framer-motion";
-import { FaLock, FaUser } from "react-icons/all";
+import { FaLock, FaUser } from "react-icons/fa";
 function Login() {
   const { isValid, nameRef, passwordRef, valid, login } = useLogin();
   return (

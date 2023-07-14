@@ -1,11 +1,9 @@
 import SidebarLink from "../sidebarLink";
-import {
-  AiFillHome,
-  BiLogInCircle,
-  BsPeopleFill,
-  FaComments,
-  GrOrderedList,
-} from "react-icons/all";
+import { AiFillHome } from "react-icons/ai";
+import { BiLogInCircle } from "react-icons/bi";
+import { BsPeopleFill } from "react-icons/bs";
+import { FaComments } from "react-icons/fa";
+import { GrOrderedList } from "react-icons/gr";
 import logo from "../../assets/logo.png";
 import "./sidebar.scss";
 import { motion as m } from "framer-motion";

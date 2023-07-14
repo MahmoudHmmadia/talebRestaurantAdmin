@@ -4,7 +4,7 @@ type props = {
   content: string;
   color: string;
   bgColor: string;
-  Icon?: IconType;
+  Icon?: any;
   fn?: () => void;
   width?: string;
   valid?: boolean;

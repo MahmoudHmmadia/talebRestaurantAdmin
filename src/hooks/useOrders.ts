@@ -11,7 +11,7 @@ export type menuCategories =
   | "breakFast"
   | "drinks";
 function useOrders() {
-  const { setServerResponse } = UseContext();
+  const { setServerResponse, setLoading } = UseContext();
   const [orders, setOrders] = useState<undefined | order[]>();
   const [orderDishes, setOrderDishes] = useState<
     | undefined
@@ -23,12 +23,15 @@ function useOrders() {
       }[]
   >();
   function getOrders() {
+    setLoading(true);
     myAxios
       .get("/order")
       .then((res) => {
+        setLoading(false);
         setOrders(res.data);
       })
       .catch(() => {
+        setLoading(false);
         setServerResponse(ERROR_MESSAGE);
       });
   }

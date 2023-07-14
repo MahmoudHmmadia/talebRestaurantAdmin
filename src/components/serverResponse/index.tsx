@@ -1,14 +1,11 @@
 import { motion as m } from "framer-motion";
 import AltButton from "../altButton";
-import {
-  BiLike,
-  CgCheck,
-  CiWarning,
-  IoMdReturnLeft,
-  MdDateRange,
-  TbTruck,
-} from "react-icons/all";
-import { useNavigate } from "react-router-dom";
+import { BiLike } from "react-icons/bi";
+import { CgCheck } from "react-icons/cg";
+import { CiWarning } from "react-icons/ci";
+import { IoMdReturnLeft } from "react-icons/io";
+import { MdDateRange } from "react-icons/md";
+import { TbTruck } from "react-icons/tb";
 import UseContext from "../../context/UseContext";
 type res = {
   content: string | { name: string; date: string; time: string };

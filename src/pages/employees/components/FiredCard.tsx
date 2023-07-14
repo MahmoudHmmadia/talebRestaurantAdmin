@@ -3,7 +3,6 @@ import { motion as m } from "framer-motion";
 import { employee } from "../../../context/UseContext";
 import AltButton from "../../../components/altButton";
 import { GrReturn } from "react-icons/gr";
-import { MdOutdoorGrill } from "react-icons/md";
 import { BsDoorClosedFill } from "react-icons/bs";
 function FiredCard({
   employee,

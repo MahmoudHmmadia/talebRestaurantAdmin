@@ -11,16 +11,19 @@ export type feedBack = {
   __v: number;
 };
 function useFeedBack() {
-  const { setLoader, setServerResponse } = UseContext();
+  const { setLoader, setServerResponse, setLoading } = UseContext();
   const [feedBacks, setFeedBacks] = useState<feedBack[]>();
   function getFeedBacks() {
+    setLoading(true);
     myAxios
       .get("/admin/feedBacks")
       .then((res) => {
+        setLoading(false);
         setLoader(true);
         setFeedBacks(res.data);
       })
       .catch(() => {
+        setLoading(false);
         setServerResponse(ERROR_MESSAGE);
       });
   }

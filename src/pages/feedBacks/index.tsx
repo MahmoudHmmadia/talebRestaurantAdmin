@@ -1,18 +1,18 @@
 import { GiConversation } from "react-icons/gi";
 import PageTitle from "../../components/pageTitle";
-import { BiComment, BiHeartCircle } from "react-icons/bi";
-import { TbHeartBroken } from "react-icons/tb";
-import { motion as m } from "framer-motion";
-import { useEffect, useState } from "react";
-import "./feedBacks.scss";
-import useFeedBack, { feedBack } from "../../hooks/useFeedBacks";
+import { BiHeartCircle } from "react-icons/bi";
 import {
   BsEmojiAngryFill,
   BsEmojiHeartEyesFill,
   BsEmojiNeutralFill,
   BsEmojiSmileFill,
-  FaComment,
-} from "react-icons/all";
+} from "react-icons/bs";
+import { FaComment } from "react-icons/fa";
+import { TbHeartBroken } from "react-icons/tb";
+import { motion as m } from "framer-motion";
+import { useEffect, useState } from "react";
+import "./feedBacks.scss";
+import useFeedBack, { feedBack } from "../../hooks/useFeedBacks";
 function FeedBacks() {
   const { feedBacks } = useFeedBack();
   const [isGoodFeedBacks, setIsGoodFeedBacks] = useState(true);
@@ -75,6 +75,11 @@ function FeedBacks() {
           </span>
         </m.li>
       </ul>
+      {(filteredFeedBacks?.length == 0 || !filteredFeedBacks) && (
+        <h2 className="neon letter-s-1 w-100 uppercase txt-c">
+          THERE IS No FEEDBACKS TO SHOWN
+        </h2>
+      )}
       <div className="fideBacks_boxes w-100">
         {filteredFeedBacks?.map((f) => (
           <div

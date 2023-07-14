@@ -25,7 +25,6 @@ function App() {
           <ServerResponse response={serverResponse} />
         </>
       )}
-
       {!auth ? (
         <Routes>
           <Route path="/" element={<Login />} />

@@ -1,10 +1,6 @@
-import { IconType } from "react-icons";
-import {
-  SiGmail,
-  BsFacebook,
-  BsLinkedin,
-  AiFillInstagram,
-} from "react-icons/all";
+import { BsFacebook, BsLinkedin } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
+import { AiFillInstagram } from "react-icons/ai";
 export const socialIcons = [
   {
     name: "facebook",
