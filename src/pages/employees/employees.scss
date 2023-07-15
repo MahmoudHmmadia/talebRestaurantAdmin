@@ -9,6 +9,9 @@
   }
   .employees_boxes {
     @include grid(250px);
+    @media (max-width: 500px) {
+      @include grid(200px);
+    }
   }
   .card {
     transform: translateX(-50%);

@@ -12,6 +12,8 @@ import { CiWarning } from "react-icons/ci";
 import AltButton from "../../components/altButton";
 import AddEmployee from "./components/AddEmployee";
 import CoolImage from "../../components/coolImage/CoolImage";
+import { Helmet } from "react-helmet";
+import logo from "../../assets/logo.png";
 function Employs() {
   const {
     fired,
@@ -27,6 +29,10 @@ function Employs() {
   const { serverResponse } = UseContext();
   return (
     <div className="employees flex flex-column g-3 align-center">
+      <Helmet>
+        <link rel="icon" href={logo} />
+        <title>Taleb Restaurant | Employees</title>
+      </Helmet>
       {serverResponse && <ServerResponse response={serverResponse} />}
       {card && firedCard && (
         <>
@@ -90,16 +96,6 @@ function Employs() {
             ) : (
               <>
                 <div className="image centering-content circle cl-khaled">
-                  {/* <img
-                    src={`https://www.taleb_restaurant_api.onrender.com/assets/${person?.image}`}
-                    alt="EMPLOYEE"
-                    width={100}
-                    className="circle fit-cover"
-                    style={{
-                      boxShadow: "0 0 0 4px #000,0 0 0 8px",
-                      aspectRatio: 1 / 1,
-                    }}
-                  /> */}
                   <CoolImage
                     height={""}
                     thumb=""
@@ -132,11 +128,12 @@ function Employs() {
                       backgroundColor: "#aaa",
                     }}
                   ></div>
-                  <div className="flex align-center g-1 fs-small">
+                  <div className="flex align-center g-1 fs-small flex-wrap">
                     <AltButton
                       bgColor="blue_gradient_bg"
                       color="cl-b"
                       content="edit"
+                      width="40"
                       Icon={BiEdit}
                       fn={() => {
                         setCard(person);
@@ -154,6 +151,7 @@ function Employs() {
                         setFiredCard(true);
                       }}
                       valid={true}
+                      width="40"
                     />
                   </div>
                 </div>

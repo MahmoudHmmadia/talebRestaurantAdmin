@@ -16,6 +16,8 @@ import { motion as m } from "framer-motion";
 import "./home.scss";
 import HomeBox from "./components/homeBox";
 import useHome, { order } from "../../hooks/useHome";
+import { Helmet } from "react-helmet";
+import logo from "../../assets/logo.png";
 export function test(order: order) {
   if (
     new Date().toLocaleDateString() == order.createdAt.date &&
@@ -29,6 +31,10 @@ function Home() {
   const { details } = useHome();
   return (
     <div className="home flex flex-column g-3 align-center">
+      <Helmet>
+        <link rel="icon" href={logo} />
+        <title>Taleb Restaurant | Home</title>
+      </Helmet>
       <PageTitle icon={<MdFoodBank />} title="HOME" />
       <div className="home_boxes w-100">
         <HomeBox
@@ -87,11 +93,11 @@ function Home() {
                   gridTemplateColumns: "40% 40% 20%",
                 }}
               >
-                <div className="flex g-1 align-center">
+                <div className="flex g-1 align-center flex-wrap">
                   <span className="cl-w bold">NAME :</span>
                   <span className="cl-t uppercase">{order.name}</span>
                 </div>
-                <div className="flex g-1 align-center">
+                <div className="flex g-1 align-center flex-wrap">
                   <span className="cl-w bold">PRICE :</span>
                   <span className="cl-t uppercase">{order.price} SP</span>
                 </div>

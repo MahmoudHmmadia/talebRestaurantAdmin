@@ -15,6 +15,7 @@ import SwiperCore, { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
+import logo from "../../assets/logo.png";
 SwiperCore.use([Pagination]);
 import {
   GiMeat,
@@ -23,6 +24,7 @@ import {
   GiToaster,
   GiWrappedSweet,
 } from "react-icons/gi";
+import { Helmet } from "react-helmet";
 SwiperCore.use([Pagination]);
 function Orders() {
   const { orders, orderDishes, setOrderDishes } = useOrders();
@@ -35,6 +37,10 @@ function Orders() {
   }
   return (
     <div className="orders flex flex-column g-3 align-center">
+      <Helmet>
+        <link rel="icon" href={logo} />
+        <title>Taleb Restaurant | Orders</title>
+      </Helmet>
       <PageTitle title="orders" icon={<BiFoodMenu />} />
       {orderDishes && (
         <>

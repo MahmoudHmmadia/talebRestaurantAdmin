@@ -1,12 +1,18 @@
+import { Helmet } from "react-helmet";
 import Button from "../../components/button";
 import useLogin from "../../hooks/useLogin";
 import "./login.scss";
 import { motion as m } from "framer-motion";
 import { FaLock, FaUser } from "react-icons/fa";
+import logo from "../../assets/logo.png";
 function Login() {
   const { isValid, nameRef, passwordRef, valid, login } = useLogin();
   return (
     <div className=" w-100 h-100 login_cover l-0 t-0 fixed">
+      <Helmet>
+        <link rel="icon" href={logo} />
+        <title>Taleb Restaurant | FeedBacks</title>
+      </Helmet>
       <div className="fixed l-0 t-0 w-100 h-100 black-bg opacity-70"></div>
       <div className="login fixed l-50 t-50 p-3 circle translate-50 flex flex-column g-3">
         <m.div

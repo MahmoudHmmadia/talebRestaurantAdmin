@@ -13,6 +13,8 @@ import { motion as m } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./feedBacks.scss";
 import useFeedBack, { feedBack } from "../../hooks/useFeedBacks";
+import { Helmet } from "react-helmet";
+import logo from "../../assets/logo.png";
 function FeedBacks() {
   const { feedBacks } = useFeedBack();
   const [isGoodFeedBacks, setIsGoodFeedBacks] = useState(true);
@@ -30,6 +32,10 @@ function FeedBacks() {
   }, [feedBacks, isGoodFeedBacks]);
   return (
     <div className="fideBacks flex flex-column g-3 align-center">
+      <Helmet>
+        <link rel="icon" href={logo} />
+        <title>Taleb Restaurant | FeedBacks</title>
+      </Helmet>
       <PageTitle title="feed backs" icon={<GiConversation />} />
       <ul className="alt-bg radius-m fideBacks_filter overflow-hidden p-2 g-1 grid">
         <m.li

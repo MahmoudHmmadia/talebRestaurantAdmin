@@ -1,5 +1,5 @@
-//@ts-ignore
 import pattern from "../../assets/separator.svg";
+import "./pageTitle.scss";
 function PageTitle({ title, icon }: { title: string; icon: any }) {
   return (
     <div className="flex flex-column g-1">

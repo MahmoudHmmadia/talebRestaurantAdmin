@@ -4,6 +4,9 @@
 .home {
   .home_boxes {
     @include grid(250px);
+    @media (max-width: 500px) {
+      @include grid(200px);
+    }
     .box {
       .title {
         -webkit-text-stroke: 1px;
@@ -12,5 +15,8 @@
   }
   .alt_home_boxes {
     @include grid(500px);
+    @media (max-width: 767px) {
+      @include grid(200px);
+    }
   }
 }

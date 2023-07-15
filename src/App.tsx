@@ -35,7 +35,7 @@ function App() {
           <div className="relative z_1">
             <Sidebar />
           </div>
-          <div className="app-content p-3">
+          <div className="app-content p-2">
             <div className="absolute l-0 t-0 w-100 h-100 alt-bg opacity-90"></div>
             <div className="relative">
               <Routes>
