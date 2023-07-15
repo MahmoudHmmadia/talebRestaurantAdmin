@@ -42,20 +42,11 @@ const ImageRenderer = ({
               ${!!isLoaded ? "isLoaded" : ""}
             `}
           >
-            <div>
-              <div>
-                <div>
-                  <div>
-                    <div>
-                      <div>
-                        <div>
-                          <div></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="loaderr">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
           <img
