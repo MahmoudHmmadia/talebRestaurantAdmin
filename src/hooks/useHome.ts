@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import myAxios from "../api/axios";
 import UseContext, { ERROR_MESSAGE } from "../context/UseContext";
 import { menuCategories } from "./useOrders";
+import { AxiosResponse } from "axios";
 export type order = {
   _id: string;
   name: string;
@@ -46,7 +47,7 @@ function useHome() {
     setLoading(true);
     myAxios
       .get("/admin")
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setDetails(res.data);
         setLoading(false);
       })

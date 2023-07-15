@@ -33,7 +33,7 @@ function EditCard({
         .post(`/employees/edit/${employee?._id}`, {
           salary: salaryRef.current?.value,
         })
-        .then((_res) => {
+        .then(() => {
           setEditCard(undefined);
           setServerResponse({
             type: "edit",
@@ -41,7 +41,7 @@ function EditCard({
           });
           getEmployees();
         })
-        .catch((_err) => {
+        .catch(() => {
           setServerResponse(ERROR_MESSAGE);
         });
   }

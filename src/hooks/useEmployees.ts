@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import myAxios from "../api/axios";
 import UseContext, { ERROR_MESSAGE, employee } from "../context/UseContext";
+import { AxiosResponse } from "axios";
 
 function useEmployees() {
   const { setServerResponse, setLoading } = UseContext();
@@ -11,7 +12,7 @@ function useEmployees() {
   function fired(id: string) {
     myAxios
       .post(`employees`, { id })
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setServerResponse({
           type: "fired",
           content: res.data.message,
@@ -24,7 +25,7 @@ function useEmployees() {
     setLoading(true);
     myAxios
       .get("employees")
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setLoading(false);
         setEmployees(res.data);
       })

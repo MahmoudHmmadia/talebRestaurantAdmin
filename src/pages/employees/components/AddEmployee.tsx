@@ -64,7 +64,7 @@ function AddEmployee({ setAddEmployee, id, getEmployees, jobTitle }: props) {
           });
           setAddEmployee(undefined);
         })
-        .catch((_err) => {
+        .catch(() => {
           setServerResponse({
             type: "error",
             content: "The Server Is Not Working Write Now , Try Again Letter",

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import myAxios from "../api/axios";
 import UseContext, { ERROR_MESSAGE } from "../context/UseContext";
+import { AxiosResponse } from "axios";
 export type feedBack = {
   _id: string;
   name: string;
@@ -17,7 +18,7 @@ function useFeedBack() {
     setLoading(true);
     myAxios
       .get("/admin/feedBacks")
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setLoading(false);
         setLoader(true);
         setFeedBacks(res.data);

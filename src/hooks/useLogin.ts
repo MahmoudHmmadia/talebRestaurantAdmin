@@ -21,7 +21,7 @@ function useLogin() {
         name: nameRef.current?.value,
         password: passwordRef.current?.value,
       })
-      .then((_res) => {
+      .then(() => {
         setLoading(false);
         setAuth(true);
       })

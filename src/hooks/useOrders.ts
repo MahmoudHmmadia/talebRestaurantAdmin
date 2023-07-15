@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { order } from "./useHome";
 import myAxios from "../api/axios";
 import UseContext, { ERROR_MESSAGE } from "../context/UseContext";
+import { AxiosResponse } from "axios";
 export type menuCategories =
   | "pizza"
   | "meal"
@@ -26,7 +27,7 @@ function useOrders() {
     setLoading(true);
     myAxios
       .get("/order")
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setLoading(false);
         setOrders(res.data);
       })
