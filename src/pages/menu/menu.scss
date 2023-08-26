@@ -1,0 +1,27 @@
+.menu {
+  .pizza,
+  .meal,
+  .salad,
+  .sweet,
+  .fastFood,
+  .breakFast,
+  .drinks {
+    position: fixed;
+    transition: 0.5s all ease-in-out;
+    z-index: 100000;
+    width: 100% !important;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0e0d0ce0;
+  }
+  .add_Dish {
+    width: 40%;
+    @media (max-width: 991px) {
+      width: 50%;
+    }
+    @media (max-width: 767px) {
+      width: 90%;
+    }
+  }
+}

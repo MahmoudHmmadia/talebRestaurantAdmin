@@ -21,9 +21,9 @@ function useLogin() {
         name: nameRef.current?.value,
         password: passwordRef.current?.value,
       })
-      .then(() => {
+      .then((res) => {
         setLoading(false);
-        setAuth(true);
+        setAuth(res.data.name);
       })
       .catch((err: AxiosError) => {
         setLoading(false);

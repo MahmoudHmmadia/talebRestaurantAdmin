@@ -1,3 +1,4 @@
+import UseContext from "../../context/UseContext";
 import "./button.scss";
 import { motion as m } from "framer-motion";
 type props = {
@@ -23,6 +24,7 @@ function Button({
   fn,
   valid,
 }: props) {
+  const { loader } = UseContext();
   return (
     <m.button
       className={`button pl-4 pr-4 relative letter-s-2 uppercase centering-content relative overflow-hidden ${outline} ${bgColor} ${color} ${
@@ -46,6 +48,7 @@ function Button({
         delay: 2,
       }}
       onClick={fn}
+      disabled={loader}
     >
       <div
         className={`absolute button_circle smooth-2 l-50 circle ${button_circle_bg_color}`}

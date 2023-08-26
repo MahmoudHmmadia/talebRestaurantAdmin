@@ -51,8 +51,8 @@ interface Context {
   setLoading: Dispatch<SetStateAction<boolean>>;
   loader: boolean;
   setLoader: Dispatch<SetStateAction<boolean>>;
-  auth: boolean;
-  setAuth: Dispatch<SetStateAction<boolean>>;
+  auth: string | undefined;
+  setAuth: Dispatch<SetStateAction<string | undefined>>;
 }
 const context = createContext<Context>({
   serverResponse: undefined,
@@ -63,7 +63,7 @@ const context = createContext<Context>({
   setLoading: () => {},
   loader: false,
   setLoader: () => {},
-  auth: false,
+  auth: undefined,
   setAuth: () => {},
 });
 export const Provider = ({ children }: { children: ReactNode }) => {
@@ -73,7 +73,7 @@ export const Provider = ({ children }: { children: ReactNode }) => {
   const [customers, setCustomers] = useState<undefined | customer[]>();
   const [loading, setLoading] = useState(false);
   const [loader, setLoader] = useState(false);
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState<string | undefined>(undefined);
   return (
     <context.Provider
       value={{

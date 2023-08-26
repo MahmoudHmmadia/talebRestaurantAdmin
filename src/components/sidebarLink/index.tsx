@@ -12,7 +12,7 @@ function SidebarLink({ path, content, icon }: props) {
         backgroundColor: "#e4c590",
         color: "#000",
       }}
-      className="cl-t"
+      className="cl-t fs-b-small"
     >
       <NavLink className="sidebar_link p-2 uppercase link letter-s-1" to={path}>
         <div className="flex align-center g-1">

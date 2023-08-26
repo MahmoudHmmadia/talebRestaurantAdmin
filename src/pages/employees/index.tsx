@@ -100,6 +100,7 @@ function Employs() {
                     height={""}
                     thumb=""
                     url={`https://taleb-restaurant-api.onrender.com/assets/${person?.image}`}
+                    // url={`http://localhost:3500/assets/${person?.image}`}
                     width={100}
                     type="team"
                   />
@@ -133,7 +134,7 @@ function Employs() {
                       bgColor="blue_gradient_bg"
                       color="cl-b"
                       content="edit"
-                      width="40"
+                      width="w-100"
                       Icon={BiEdit}
                       fn={() => {
                         setCard(person);
@@ -151,7 +152,7 @@ function Employs() {
                         setFiredCard(true);
                       }}
                       valid={true}
-                      width="40"
+                      width="w-100"
                     />
                   </div>
                 </div>

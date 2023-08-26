@@ -1,10 +1,9 @@
-import { BiFoodMenu } from "react-icons/bi";
+import { BiCheck, BiFoodMenu } from "react-icons/bi";
 import { motion as m } from "framer-motion";
 import PageTitle from "../../components/pageTitle";
 import "./orders.scss";
 import { ImSpoonKnife } from "react-icons/im";
 import useOrders from "../../hooks/useOrders";
-import { test } from "../home";
 import AltButton from "../../components/altButton";
 import { MdSoupKitchen } from "react-icons/md";
 import { IoCloseCircle } from "react-icons/io5";
@@ -25,14 +24,18 @@ import {
   GiWrappedSweet,
 } from "react-icons/gi";
 import { Helmet } from "react-helmet";
+import UseContext from "../../context/UseContext";
+import { useEffect } from "react";
 SwiperCore.use([Pagination]);
 function Orders() {
-  const { orders, orderDishes, setOrderDishes } = useOrders();
+  const { auth } = UseContext();
+  const { orders, orderDishes, setOrderDishes, doneOrder } = useOrders();
   function getDishesNumber(order: order) {
     let sum = 0;
-    order.total.forEach((dish) => {
-      sum += dish.number;
-    });
+    if (order.total)
+      order.total.forEach((dish) => {
+        sum += dish.number;
+      });
     return sum;
   }
   return (
@@ -136,9 +139,11 @@ function Orders() {
         </>
       )}
       {!orders || orders.length == 0 ? (
-        <h2 className="cl-w neon uppercase">There is no orders write now</h2>
+        <h2 className="cl-w neon uppercase relative">
+          There is no orders write now
+        </h2>
       ) : (
-        <div className="orders_boxes w-100">
+        <div className="orders_boxes w-100 relative">
           {orders.map((order) => (
             <div
               className="box overflow-hidden p-2 radius-s flex flex-column g-3 alt-bg dark-box-shadow relative"
@@ -154,8 +159,22 @@ function Orders() {
                 </div>
                 <div className="flex align-center g-1 uppercase">
                   <h5>number of dishes :</h5>
-                  <h5 className="extra-bold cl-bl">{getDishesNumber(order)}</h5>
+                  <h5 className="extra-bold cl-bl">
+                    {order ? getDishesNumber(order) : "Wait For A Second"}
+                  </h5>
                 </div>
+                {auth == "chef" && (
+                  <>
+                    <div className="flex align-center g-1 uppercase">
+                      <h5>address :</h5>
+                      <h5 className="extra-bold cl-bl">{order.address}</h5>
+                    </div>
+                    <div className="flex align-center g-1 uppercase">
+                      <h5>Number :</h5>
+                      <h5 className="extra-bold cl-bl">{order.phoneID}</h5>
+                    </div>
+                  </>
+                )}
                 <div className="flex align-center g-1 uppercase">
                   <h5>total price :</h5>
                   <h5 className="extra-bold cl-g bold">{order.price} SP</h5>
@@ -172,7 +191,7 @@ function Orders() {
                   />
                 </div>
               </div>
-              {test(order) ? (
+              {!order.done ? (
                 <div
                   className="absolute centering-content "
                   style={{
@@ -200,6 +219,15 @@ function Orders() {
                   <span className="bold uppercase letter-s-1">done</span>
                 </div>
               )}
+              <AltButton
+                content="Done"
+                color={"cl-b"}
+                bgColor={"green_gradient_bg"}
+                Icon={BiCheck}
+                fn={() => doneOrder(order._id)}
+                width="w-100"
+                valid={!order.done}
+              />
             </div>
           ))}
         </div>

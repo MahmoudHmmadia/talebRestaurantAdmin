@@ -7,9 +7,9 @@ function PageTitle({ title, icon }: { title: string; icon: any }) {
         <h1 className="pageTitle cl-w uppercase letter-s-2 fs-large cool_title">
           {title}
         </h1>
-        <div className="flex icon cl-khaled fs-large ">{icon}</div>
+        <div className="flex icon cl-khaled fs-large">{icon}</div>
       </div>
-      <div className="image">
+      <div className="image relative z_1">
         <img src={pattern} alt="" />
       </div>
     </div>

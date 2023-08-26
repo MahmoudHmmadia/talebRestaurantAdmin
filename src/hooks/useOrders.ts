@@ -12,7 +12,7 @@ export type menuCategories =
   | "breakFast"
   | "drinks";
 function useOrders() {
-  const { setServerResponse, setLoading } = UseContext();
+  const { setServerResponse, setLoading, setLoader } = UseContext();
   const [orders, setOrders] = useState<undefined | order[]>();
   const [orderDishes, setOrderDishes] = useState<
     | undefined
@@ -36,9 +36,27 @@ function useOrders() {
         setServerResponse(ERROR_MESSAGE);
       });
   }
+  function doneOrder(id: string) {
+    setLoader(true);
+    myAxios
+      .put(`/order/done/${id}`)
+      .then((res) => {
+        setOrders((prev) => {
+          if (prev)
+            return [...prev.filter((d) => d._id !== res.data._id), res.data];
+          else return [res.data];
+        });
+      })
+      .catch(() => {
+        setServerResponse(ERROR_MESSAGE);
+      })
+      .finally(() => {
+        setLoader(false);
+      });
+  }
   useEffect(() => {
     getOrders();
   }, []);
-  return { orders, orderDishes, setOrderDishes };
+  return { orders, orderDishes, setOrderDishes, doneOrder };
 }
 export default useOrders;

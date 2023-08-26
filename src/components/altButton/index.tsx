@@ -7,12 +7,22 @@ type props = {
   Icon?: any;
   fn?: () => void;
   width?: string;
+  extra?: string;
   valid?: boolean;
 };
-function AltButton({ content, bgColor, color, fn, Icon, width, valid }: props) {
+function AltButton({
+  content,
+  bgColor,
+  color,
+  fn,
+  Icon,
+  width,
+  valid,
+  extra,
+}: props) {
   return (
     <m.button
-      className={`p-2 bold uppercase letter-s-1 m-auto centering-content g-1 ${bgColor} ${color} ${
+      className={`p-2 bold uppercase letter-s-1 m-auto centering-content g-1 ${bgColor} ${extra} ${color} ${
         width ? width : "w-60"
       } ${valid ? "pointer opacity-100" : "mouse-none opacity-50"}`}
       onClick={fn}

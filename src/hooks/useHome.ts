@@ -21,6 +21,7 @@ export type order = {
     hour: number;
     minute: number;
   };
+  done: boolean;
   __v: number;
 };
 type feedBacks = {

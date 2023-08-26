@@ -38,7 +38,7 @@ const ImageRenderer = ({
           /> */}
           {/* ==> custom loader <== */}
           <div
-            className={`cool_image thumb semicircle 
+            className={`cool_image centering-content thumb centering-content semicircle 
               ${!!isLoaded ? "isLoaded" : ""}
             `}
           >
@@ -61,6 +61,7 @@ const ImageRenderer = ({
               height,
               width,
             }}
+            alt="NOT FOUND"
           />
         </>
       )}

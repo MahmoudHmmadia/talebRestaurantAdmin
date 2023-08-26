@@ -1,6 +1,6 @@
 import SidebarLink from "../sidebarLink";
 import { AiFillHome } from "react-icons/ai";
-import { BiLogInCircle } from "react-icons/bi";
+import { BiFoodMenu, BiLogInCircle } from "react-icons/bi";
 import { BsPeopleFill } from "react-icons/bs";
 import { FaComments } from "react-icons/fa";
 import { GrOrderedList } from "react-icons/gr";
@@ -12,11 +12,7 @@ import UseContext from "../../context/UseContext";
 function Sidebar() {
   const { setAuth } = UseContext();
   return (
-    <div className="sidebar flex flex-column g-3 alt-bg sticky-top">
-      <div className="absolute l-0 t-0 w-100 h-100 alt-bg opacity-70 z_1"></div>
-      <div className="absolute l-0 t-0 w-100 h-100 centering-content sidebar__image">
-        <img src={image} alt="IMAGE" className="fit-cover" />
-      </div>
+    <div className="sidebar flex flex-column g-3 alt-bg sticky-top dark-box-shadow">
       <div className="p-2 centering-content relative z-10000 ">
         <img src={logo} alt="LOGO" width={70} />
       </div>
@@ -41,9 +37,12 @@ function Sidebar() {
         <li className="link overflow-hidden">
           <SidebarLink
             path="feedBacks"
-            content="feed backs"
+            content="feedbacks"
             icon={<FaComments />}
           />
+        </li>
+        <li className="link overflow-hidden">
+          <SidebarLink path="menu" content="menu" icon={<BiFoodMenu />} />
         </li>
         <m.li
           className="pointer overflow-hidden cl-t"

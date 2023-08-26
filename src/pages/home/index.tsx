@@ -18,15 +18,7 @@ import HomeBox from "./components/homeBox";
 import useHome, { order } from "../../hooks/useHome";
 import { Helmet } from "react-helmet";
 import logo from "../../assets/logo.png";
-export function test(order: order) {
-  if (
-    new Date().toLocaleDateString() == order.createdAt.date &&
-    new Date().getHours() == order.createdAt.hour &&
-    new Date().getMinutes() < 10 + order.createdAt.minute
-  )
-    return true;
-  else return false;
-}
+
 function Home() {
   const { details } = useHome();
   return (
@@ -83,12 +75,12 @@ function Home() {
               <li
                 key={order._id}
                 className={`cl-t order p-2 g-1 grid fs-small ${
-                  test(order) ? "black-bg" : "alt-bg"
+                  order.done ? "black-bg" : "alt-bg"
                 }`}
                 style={{
-                  borderTop: `1px solid ${test(order) ? "#ffa852" : "#05ba05"}`,
+                  borderTop: `1px solid ${order.done ? "#ffa852" : "#05ba05"}`,
                   borderBottom: `1px solid ${
-                    test(order) ? "#ffa852" : "#05ba05"
+                    order.done ? "#ffa852" : "#05ba05"
                   }`,
                   gridTemplateColumns: "40% 40% 20%",
                 }}
@@ -101,7 +93,7 @@ function Home() {
                   <span className="cl-w bold">PRICE :</span>
                   <span className="cl-t uppercase">{order.price} SP</span>
                 </div>
-                {test(order) ? (
+                {order.done ? (
                   <m.div
                     className="icon fs-b-small centering-content cl-m"
                     initial={{
