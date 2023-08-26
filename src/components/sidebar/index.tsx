@@ -51,7 +51,7 @@ function Sidebar() {
             color: "#000",
           }}
         >
-          <div className="link" onClick={() => setAuth(false)}>
+          <div className="link" onClick={() => setAuth(undefined)}>
             <div className="sidebar_link flex align-center g-1  p-2 uppercase link letter-s-1">
               <span className="flex icon">
                 <BiLogInCircle />
